@@ -19,6 +19,7 @@
   "homepage": "https://github.com/fred1525/Express-Mongo-Frontend-Practice#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "jquery": "^3.4.1",
     "mongojs": "^3.1.0"
   },
   "devDependencies": {

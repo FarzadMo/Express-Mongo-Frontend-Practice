@@ -18,6 +18,36 @@ app.get("/", function(req, res) {
   res.send("Hello world");
 });
 
+app.get("/all", function(req, res) {
+  db.animals.find({}, function(error, found) {
+    if (error) {
+      console.log(error);
+    } else {
+      res.json(found);
+    }
+  });
+});
+
+app.get("/name", function(req, res) {
+  db.animals.find({}).sort({ name: 1 }, function(error, found) {
+    if (error) {
+      console.log(error);
+    } else {
+      res.json(found);
+    }
+  });
+});
+
+app.get("/weight", function(req, res) {
+  db.animals.find({}).sort({ weight: 1 }, function(error, found) {
+    if (error) {
+      console.log(error);
+    } else {
+      res.json(found);
+    }
+  });
+});
+
 app.listen(3000, function() {
   console.log("app is listening on port 3000");
 });
